@@ -45,7 +45,7 @@ public class Acesso implements Runnable {
        
         //ipCliente = socket.getInetAddress().getHostName();
        
-        tela.printar("\n > Conexão aberta.");
+        tela.printar(" > Conexão aberta.");
         
 
     }
@@ -132,7 +132,9 @@ public class Acesso implements Runnable {
                         case "randomCode": randomCode(); break;
 
                         case "receberHistoricoSaques": historicoSaques(); break;
-
+                        
+                        case "receberHistoricoTransferencia": historicoTransferencia(); break;
+                      
                         case "realizarTransferencia" : realizarTransferencia(); break;
                         
                         case "removerConta" : removerConta(); break;
@@ -303,12 +305,13 @@ public class Acesso implements Runnable {
                 if(c.getCliente().getEmail().equals(cli.getEmail())){
                     enviar+= c.getNumero() + "&&";
                 }
-                if(enviar.length() > 0 ){
+                
+            }
+            if(enviar.length() > 0 ){
                     enviar = enviar.substring (0, enviar.length() - 2);
                 }
-            }
         }
-        
+        tela.printar(enviar);
         out.println(enviar);
        
 
@@ -385,15 +388,17 @@ public class Acesso implements Runnable {
     public void historicoSaques() throws IOException{
         
         String valor = in.readLine();
-
+        
         Conta conta = Serializar.buscarConta(valor);
         
         ArrayList<Saque> saques = new ArrayList<>();
         saques  = conta.getSaques();
-        
+       
         String enviar = "";
         
         for(Saque saq : saques){
+           
+            
             Double val = saq.getValor();
             Calendar calendar = saq.getData();
              
@@ -401,9 +406,48 @@ public class Acesso implements Runnable {
             int mes = calendar.get(Calendar.MONTH);
             int ano = calendar.get(Calendar.YEAR);
             
+            enviar += val;
+            enviar +="##";
+            
+            enviar += ano +"/"+ mes +"/"+ dia; 
+            enviar +="&&";
+
+        }
+        if(enviar.length() >0){
+            enviar = enviar.substring(0, enviar.length() -2);
+        }
+        
+        out.println(enviar);
+        
+        
+    }
+    
+    public void historicoTransferencia() throws IOException{
+        
+        String valor = in.readLine();
+       
+        ArrayList<Tranferencia> transferencias = new ArrayList<>();
+        transferencias = Serializar.buscarTranferencia(valor);
+        String enviar = "";
+        
+        System.out.println("qtnd:" + transferencias.size());
+        
+        for(Tranferencia transf : transferencias){
+            Double val = transf.getValor();
+            Calendar calendar = transf.getDataTransferecia();
+             
+            int dia = calendar.get(Calendar.DAY_OF_MONTH);
+            int mes = calendar.get(Calendar.MONTH);
+            int ano = calendar.get(Calendar.YEAR);
             
             
             enviar += val;
+            enviar +="##";
+            
+            enviar +=transf.getEmissor().getNumero();
+            enviar +="##";
+            
+            enviar +=transf.getReceptor().getNumero();
             enviar +="##";
             
             enviar += ano +"/"+ mes +"/"+ dia; 
@@ -749,6 +793,12 @@ public class Acesso implements Runnable {
         
         if(conta.getSaldo()>=Double.parseDouble(saque)){
             conta.setSaldo( conta.getSaldo() - Double.parseDouble(saque));
+            
+            Calendar data = Calendar.getInstance();
+            Saque saq = new Saque(Double.parseDouble(saque),data);
+            
+            conta.setSaques(saq);
+            
             if(Serializar.editarConta(conta));
             result = true;
         }

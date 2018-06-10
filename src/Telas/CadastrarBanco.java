@@ -39,10 +39,6 @@ public class CadastrarBanco extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jTextNome = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jTextMin = new javax.swing.JTextField();
-        jTextMax = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -50,7 +46,7 @@ public class CadastrarBanco extends javax.swing.JFrame {
         setAlwaysOnTop(true);
         setModalExclusionType(java.awt.Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
         setResizable(false);
-        setSize(new java.awt.Dimension(275, 290));
+        setSize(new java.awt.Dimension(275, 181));
         setType(java.awt.Window.Type.POPUP);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -64,10 +60,6 @@ public class CadastrarBanco extends javax.swing.JFrame {
                 jTextNomeActionPerformed(evt);
             }
         });
-
-        jLabel3.setText("Limite Minimo de Crédito");
-
-        jLabel4.setText("Limite Máximo de Crédito");
 
         jButton1.setText("CADASTRAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -83,15 +75,10 @@ public class CadastrarBanco extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextMax, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextMin, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jTextNome)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(jLabel2)
+                        .addGap(0, 181, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton1))
@@ -107,17 +94,9 @@ public class CadastrarBanco extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextMin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextMax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(41, 41, 41)
                 .addComponent(jButton1)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -133,8 +112,7 @@ public class CadastrarBanco extends javax.swing.JFrame {
         String maximo = null;
         
         nome = jTextNome.getText();
-        minimo = jTextMin.getText();
-        maximo = jTextMax.getText();
+        
         
         if(nome.equals("") || minimo.equals("") || maximo.equals("") ){
             JOptionPane.showMessageDialog(this, "Preencha todos os campos");
@@ -209,10 +187,6 @@ public class CadastrarBanco extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField jTextMax;
-    private javax.swing.JTextField jTextMin;
     private javax.swing.JTextField jTextNome;
     // End of variables declaration//GEN-END:variables
 }

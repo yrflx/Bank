@@ -44,6 +44,9 @@ public class TelaGerenciarBancos extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("GERENCIAR BANCOS");
+        setResizable(false);
+        setSize(new java.awt.Dimension(375, 445));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

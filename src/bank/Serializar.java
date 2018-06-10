@@ -479,18 +479,21 @@ public class Serializar {
     }
     
     public static ArrayList<Tranferencia> buscarTranferencia(String contaEmissor){
-              
+        System.out.println("bscTransferencia");
         ArrayList<Tranferencia> arrayListEnviar = new ArrayList();
         ArrayList<Tranferencia> arrayListTodas = new ArrayList();
         
         if(!(Serializar.recebe(TRANFERENCIA_FILE)==null)){
            arrayListTodas = (ArrayList<Tranferencia>) Serializar.recebe(TRANFERENCIA_FILE);
-           
+          
+             
            for(Tranferencia t : arrayListTodas){
                
                 if(t.getEmissor().getNumero().equals(contaEmissor)){
-                   arrayListEnviar.add(t);
-               }         
+                   
+                    arrayListEnviar.add(t);
+                   
+                }         
            }
            
         }               

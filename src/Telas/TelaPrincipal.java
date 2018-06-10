@@ -7,6 +7,7 @@ package Telas;
 
 import Model.Banco;
 import Model.Cliente;
+import Model.Conta;
 
 import Telas.TelaGerenciarBancos;
 import bank.Serializar;
@@ -38,6 +39,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
     public TelaPrincipal() {
         initComponents();
+        
+        ArrayList<Conta> contas = Serializar.listarContas();
+        ArrayList<Banco> bancos = Serializar.listarBancos();
+        
+        numeroContas.setText("NUMERO DE CONTAS:" + contas.size());
+        numeroBancos.setText("NUMERO DE BANCOS:" + bancos.size());
+        
+        
     }
 
     /**
@@ -53,7 +62,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         bt_gerente = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         statusServidorText = new javax.swing.JLabel();
-        numeroClientes = new javax.swing.JLabel();
+        numeroContas = new javax.swing.JLabel();
         numeroBancos = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextLog = new javax.swing.JTextArea();
@@ -61,7 +70,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("SERVER BANK");
         setBackground(new java.awt.Color(51, 51, 255));
+        setResizable(false);
+        setSize(new java.awt.Dimension(563, 428));
 
         jButton2.setText("ATIVAR SERVIDOR");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -81,7 +93,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         statusServidorText.setText("Offline");
 
-        numeroClientes.setText("NUMERO DE CONTAS:");
+        numeroContas.setText("NUMERO DE CONTAS:");
 
         numeroBancos.setText("NUMERO DE BANCOS:");
 
@@ -121,7 +133,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(numeroBancos)
                             .addComponent(bt_gerente)
-                            .addComponent(numeroClientes))))
+                            .addComponent(numeroContas))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -139,7 +151,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(statusServidorText)
                     .addComponent(numeroBancos))
                 .addGap(18, 18, 18)
-                .addComponent(numeroClientes)
+                .addComponent(numeroContas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -213,10 +225,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         ArrayList<Cliente> clientes = Serializar.listarClientes();
         
         if(clientes == null){
-             numeroClientes.setText("NUMERO DE CLIENTES: 0" );
+             numeroContas.setText("NUMERO DE CLIENTES: 0" );
         }
             
-        numeroClientes.setText("NUMERO DE CLIENTES: " + clientes.size());
+        numeroContas.setText("NUMERO DE CLIENTES: " + clientes.size());
          
     }
     
@@ -244,7 +256,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -286,7 +298,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextLog;
     private javax.swing.JLabel numeroBancos;
-    private javax.swing.JLabel numeroClientes;
+    private javax.swing.JLabel numeroContas;
     private javax.swing.JLabel statusServidorText;
     // End of variables declaration//GEN-END:variables
 }

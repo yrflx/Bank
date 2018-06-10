@@ -10,7 +10,7 @@
     </Property>
     <Property name="resizable" type="boolean" value="false"/>
     <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[275, 290]"/>
+      <Dimension value="[275, 181]"/>
     </Property>
     <Property name="type" type="java.awt.Window$Type" editor="org.netbeans.modules.form.editors.EnumEditor">
       <Value id="POPUP"/>
@@ -38,16 +38,10 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jTextMax" alignment="1" max="32767" attributes="0"/>
-                  <Component id="jTextMin" alignment="1" max="32767" attributes="0"/>
                   <Component id="jTextNome" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="181" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -68,17 +62,9 @@
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jTextNome" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTextMin" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jTextMax" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="31" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -102,20 +88,6 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextNomeActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Limite Minimo de Cr&#xe9;dito"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextMin">
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextMax">
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Limite M&#xe1;ximo de Cr&#xe9;dito"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
