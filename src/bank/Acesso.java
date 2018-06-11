@@ -45,8 +45,7 @@ public class Acesso implements Runnable {
        
         //ipCliente = socket.getInetAddress().getHostName();
        
-        tela.printar(" > Conexão aberta.");
-        
+      
 
     }
 
@@ -63,7 +62,7 @@ public class Acesso implements Runnable {
     }
 
     private void close(){
-        tela.printar("Conexao encerrada.");
+       
        
         if(in != null){
             try{

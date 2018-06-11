@@ -53,7 +53,7 @@ public class Servidor implements Runnable {
                 
                 Socket socket = server.accept(); 
                 
-                tela.printar("conexao estabelecida");
+               
                 
                 Acesso acesso = new Acesso(socket, tela);
                 
